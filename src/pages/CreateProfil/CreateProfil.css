@@ -1,0 +1,210 @@
+.container {
+  display: flex;
+  width: 100%;
+  padding: 10px 200px;
+  justify-content: center;
+  align-items: center;
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+  margin-top: 50px;
+}
+.container form input:not([type="checkbox"]) {
+  width: 100%;
+  height: 100px;
+  padding: 10px 20px;
+  background-color: rgba(242, 242, 242, 1);
+  border-radius: 16px;
+  border: none;
+  font-size: 24px;
+}
+
+.button-respo {
+  background-color: rgba(2, 193, 125, 1);
+  color: white;
+  border-radius: 16px;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 15px 70px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.button-respo svg {
+  height: 25px;
+  width: 25px;
+}
+.container form input::placeholder {
+  color: rgba(104, 112, 141, 1);
+  font-size: 24px;
+  font-weight: 400;
+}
+.name-container {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+}
+.name-container div {
+  width: 50%;
+}
+.Title-button {
+  display: flex;
+  justify-content: space-between;
+}
+.Title-button h2 {
+  font-size: 42px;
+}
+.Title-button button {
+  background-color: rgba(2, 193, 125, 0.1);
+  color: white;
+  border-radius: 16px;
+  border: none;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px 70px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.Title-button button svg {
+  height: 25px;
+  width: 25px;
+}
+.check-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.check-box label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.check-box input {
+  height: 20px;
+  width: 20px;
+  border: 1px solid rgba(2, 193, 125, 1);
+  accent-color: white;
+  color: white;
+}
+
+.check-input {
+  display: flex;
+  position: relative;
+}
+.check-box span {
+  color: rgba(2, 193, 125, 1);
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hide the default checkbox */
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-color: rgba(2, 193, 125, 1);
+}
+
+/* Checkbox hover effect */
+
+/* Checked state styling */
+.custom-checkbox:checked {
+  background-color: rgba(2, 193, 125, 1); /* Green background */
+  border-color: rgba(2, 193, 125, 1);
+  position: relative;
+}
+
+/* Optional: Add a custom checkmark */
+.custom-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid 1px white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+@media screen and (max-width: 1240px) {
+}
+
+@media screen and (max-width: 1070px) {
+  .container {
+    padding: 20px 50px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .container {
+    padding: 20px 30px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .Title-button {
+    align-items: center;
+    justify-content: center;
+  }
+  .Title-button h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+  .Title-button button {
+    display: none;
+  }
+  .name-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .container form {
+    gap: 20px;
+  }
+  .name-container div {
+    width: 100%;
+  }
+  .button-respo {
+    display: flex;
+  }
+  .container form input:not([type="checkbox"]) {
+    height: 70px;
+
+    font-size: 20px;
+  }
+  .container form input::placeholder {
+    font-size: 20px;
+  }
+  .last{
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 590px) {
+}
+@media screen and (max-width: 480px) {
+  .check-box label {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+}
+@media screen and (max-width: 385px) {
+  .check-box label {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 250px) {
+}
