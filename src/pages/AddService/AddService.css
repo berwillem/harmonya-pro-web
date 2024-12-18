@@ -1,0 +1,170 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  margin-bottom: 90px;
+  margin-left: 8px;
+}
+
+.card {
+  margin-top: 25px;
+  height: fit-content;
+  width: 22%;
+  border-radius: 12px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) */
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #00000015;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.menu-button:hover {
+  background: rgba(200, 200, 200, 0.8);
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #7e7e7e;
+  margin-bottom: 5px;
+}
+
+.tags-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.tag {
+  font-size: 9px;
+  background-color: white;
+  border: 1px solid #7e7e7e;
+  padding: 4px 8px;
+  border-radius: 20px;
+  color: #7e7e7e;
+  font-weight: 500;
+}
+
+.dot {
+  position: absolute;
+  right: 0px;
+  bottom: 25%;
+  border-radius: 3px;
+  width: 15px;
+  height: 15px;
+}
+
+.language {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.language-menu {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  clip-path: inset(0 0 100% 0);
+  background-color: white;
+  z-index: 2;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+.language-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.language-menu ul li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px rgba(231, 231, 231, 1) solid;
+  width: 100%;
+  cursor: pointer;
+}
+.language-menu ul li:hover {
+  background-color: ghostwhite;
+  border-radius: 8px;
+}
+.language-menu ul li:last-child {
+  border-bottom: none;
+}
+.active-language {
+  clip-path: inset(0 0 0 0);
+}
+.gerer {
+  position: relative;
+}
+
+.creer {
+  position: fixed;
+  bottom: 20px;
+  right: 55px;
+}
+.creer button {
+  padding: 10px 16px;
+  border-radius: 7px;
+  border: none;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+  transition: 0.5s;
+}

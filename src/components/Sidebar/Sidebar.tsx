@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FaHome, FaCalendarAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaHome, FaCalendarAlt } from "react-icons/fa";
 import { IoMdStats } from "react-icons/io";
 import { LiaPencilRulerSolid } from "react-icons/lia";
 import styles from "./Sidebar.module.css";
@@ -11,81 +11,92 @@ import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { PiMedal } from "react-icons/pi";
 import { LuLogOut } from "react-icons/lu";
 
-const sidebarLinks = [
-  { label: "Home", path: "", icon: <FaHome size={22} /> },
+export const sidebarLinks = [
+  { label: "Home", path: "", icon: <FaHome size={20} /> },
   {
     label: "Dashboard",
     path: "dashboard",
-    icon: <MdDashboard size={22} />,
+    icon: <MdDashboard size={20} />,
   },
   {
     label: "Statistic",
     path: "statistics",
-    icon: <IoMdStats size={22} />,
+    icon: <IoMdStats size={20} />,
   },
 
   { section: "Reservations" },
-  { label: "Agenda", path: "agenda", icon: <FaCalendarAlt size={22} /> },
+  { label: "Agenda", path: "agenda", icon: <FaCalendarAlt size={20} /> },
   {
     label: "Mes reservations",
     path: "mes-reservations",
-    icon: <LiaPencilRulerSolid size={27} />,
+    icon: <LiaPencilRulerSolid size={26} />,
     customStyle: { paddingLeft: "0", gap: "10px" },
   },
   {
     label: "Demande de reservations",
     path: "demande-reservations",
-    icon: <VscGitPullRequestCreate size={22} />,
+    icon: <VscGitPullRequestCreate size={20} />,
   },
 
   { section: "Services" },
   {
     label: "Ajouter un service",
-    path: "ajouter-service",
-    icon: <PiMedal size={22} />,
+    path: "addservice",
+    icon: <PiMedal size={24} />,
+    customStyle: { paddingLeft: "0", gap: "13px" },
   },
   {
     label: "Boutique",
     path: "boutique",
-    icon: <HiOutlineBookOpen size={22} />,
+    icon: <HiOutlineBookOpen size={20} />,
   },
-  { label: "Abonnements", path: "abonnements", icon: <BsSuitcaseLg size={22} /> },
+  {
+    label: "Abonnements",
+    path: "abonnements",
+    icon: <BsSuitcaseLg size={20} />,
+  },
 ];
 
 const Sidebar: React.FC = () => {
   return (
-    <div className={styles.sidebar}>
-      <div className={styles.sidebarHeader}>
-        <h2>Harmonya</h2>
-      </div>
+    <>
+      <div className={styles.overlay}></div>
+      <div className={styles.sidebar}>
+        <div className={styles.sidebarHeader}>
+          <h2>Harmonya</h2>
+        </div>
 
-      <nav>
-        <ul>
-          {sidebarLinks.map((link, index) =>
-            link.section ? (
-              <li key={`section-${index}`} className={styles.section}>
-                {link.section} <hr className={styles.line} />
-              </li>
-            ) : (
-              <li key={index}>
-                <NavLink
-                  to={link.path as string}
-                  className={styles.navLink}
-                  style={link.customStyle || {}}
-                >
-                  {link.icon} {link.label}
-                </NavLink>
-              </li>
-            )
-          )}
-        </ul>
-      </nav>
+        <nav>
+          <ul>
+            {sidebarLinks.map((link, index) =>
+              link.section ? (
+                <li key={`section-${index}`} className={styles.section}>
+                  {link.section} <hr className={styles.line} />
+                </li>
+              ) : (
+                <li key={index}>
+                  <NavLink
+                    to={link.path as string}
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.navLink} ${styles.active}`
+                        : styles.navLink
+                    }
+                    style={link.customStyle || {}}
+                  >
+                    {link.icon} {link.label}
+                  </NavLink>
+                </li>
+              )
+            )}
+          </ul>
+        </nav>
 
-      <div className={styles.sidebarFooter}>
-        <NavLink to="intelligence" className={styles.navLink}>
-          <RiBardLine size={22} /> Harmonya intelligence
-        </NavLink>
-        <div className={styles.logout}>
+        <div className={styles.sidebarFooter}>
+          <NavLink to="intelligence" className={styles.navLink}>
+            <RiBardLine size={22} /> Harmonya intelligence
+          </NavLink>
+          <div className={styles.logout}>
             <button>
               <LuLogOut
                 size={22}
@@ -96,9 +107,10 @@ const Sidebar: React.FC = () => {
             <button>
               <MdOutlineHelpOutline size={30} color="#8C8C8F" />
             </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
