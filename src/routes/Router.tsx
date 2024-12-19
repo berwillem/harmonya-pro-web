@@ -7,6 +7,10 @@ import MainLayout from "@/layouts/MainLayout";
 import AddSevice from "@/pages/AddService/AddService";
 import MesReservations from "@/pages/MesReservations/MesReservations";
 import Demandes from "@/pages/Demandes/Demandes";
+import CheckPoint2 from "@/pages/CheckPoint2/CheckPoint2";
+import CheckPoint1 from "@/pages/CheckPoint1/CheckPoint1";
+import MultiStepForm2 from "@/pages/MultiStepForm2/MultiStepForm2";
+import ValidationPage from "@/pages/ValidationPage/ValidationPage";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +34,10 @@ const Router = createBrowserRouter([
   },
   { path: "/subscriptionChoise", element: <SubscriptionChoise /> },
   { path: "/multiStepForm", element: <MultiStepForm /> },
+  { path: "/MultiStepForm2", element: <MultiStepForm2 /> },
+  { path: "/CheckPoint2", element: <CheckPoint2 /> },
+  { path: "/CheckPoint1", element: <CheckPoint1 /> },
+  { path: "/ValidationPage", element: <ValidationPage /> },
 ]);
 
 export default Router;

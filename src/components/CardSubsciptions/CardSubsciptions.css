@@ -1,0 +1,11 @@
+.card-subsciptions {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 550px;
+  width: 338px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  cursor: pointer;
+}

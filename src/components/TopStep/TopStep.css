@@ -13,6 +13,7 @@
 .progresse {
   height: 5px;
   background-color: rgba(24, 145, 102, 1);
+  transition: 0.5s;
 }
 .content-top-step {
   display: flex;
@@ -43,7 +44,6 @@
   height: 16px;
   width: 16px;
   border-radius: 5px;
-  background-color: var(--button-color);
 }
 .back {
   width: 30px;

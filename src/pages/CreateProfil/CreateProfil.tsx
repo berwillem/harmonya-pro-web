@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { IoArrowForward } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 // Schéma de validation avec Yup
 const schema = yup.object().shape({
   firstName: yup.string().required('Le prénom est obligatoire'),
@@ -30,9 +31,12 @@ export default function CreateProfil() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>({
     resolver: yupResolver(schema),
   });
+  const navigat = useNavigate()
+
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log('Données soumises:', data);
+    navigat("/subscriptionChoise")
   };
   return (
     <main>
@@ -51,26 +55,26 @@ export default function CreateProfil() {
           <div className="name-container">
             <div>
               <input {...register('lastName')} placeholder="Nom:" />
-              <p style={{ color: 'red',marginTop:'10px' }}>{errors.lastName?.message}</p>
+              <p style={{ color: 'red', marginTop: '10px' }}>{errors.lastName?.message}</p>
             </div>
 
             {/* Prénom */}
             <div>
               <input {...register('firstName')} placeholder="Prénom :" />
-              <p style={{ color: 'red',marginTop:'10px' }}>{errors.firstName?.message}</p>
+              <p style={{ color: 'red', marginTop: '10px' }}>{errors.firstName?.message}</p>
             </div>
 
           </div>
           {/* Email */}
           <div>
             <input type="email" {...register('email')} placeholder="Email :" />
-            <p style={{ color: 'red',marginTop:'10px' }}>{errors.email?.message}</p>
+            <p style={{ color: 'red', marginTop: '10px' }}>{errors.email?.message}</p>
           </div>
 
           {/* Mot de passe */}
           <div className="last">
             <input type="password" {...register('password')} placeholder="Mot de passe :" />
-            <p style={{ color: 'red',marginTop:'10px' }}>{errors.password?.message}</p>
+            <p style={{ color: 'red', marginTop: '10px' }}>{errors.password?.message}</p>
           </div>
           {/* check box*/}
           <div className="check-box">
@@ -81,9 +85,9 @@ export default function CreateProfil() {
 
           </div>
           <button type="submit" className="button-respo" >
-              <span>Continue</span>
-              <IoArrowForward />
-            </button>
+            <span>Continue</span>
+            <IoArrowForward />
+          </button>
         </form>
 
       </div>
