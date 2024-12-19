@@ -27,3 +27,7 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+body,
+html {
+  min-height: 100vh;
+}
