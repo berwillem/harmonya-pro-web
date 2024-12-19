@@ -51,26 +51,26 @@ export default function CreateProfil() {
           <div className="name-container">
             <div>
               <input {...register('lastName')} placeholder="Nom:" />
-              <p style={{ color: 'red' }}>{errors.lastName?.message}</p>
+              <p style={{ color: 'red',marginTop:'10px' }}>{errors.lastName?.message}</p>
             </div>
 
             {/* Prénom */}
             <div>
               <input {...register('firstName')} placeholder="Prénom :" />
-              <p style={{ color: 'red' }}>{errors.firstName?.message}</p>
+              <p style={{ color: 'red',marginTop:'10px' }}>{errors.firstName?.message}</p>
             </div>
 
           </div>
           {/* Email */}
           <div>
             <input type="email" {...register('email')} placeholder="Email :" />
-            <p style={{ color: 'red' }}>{errors.email?.message}</p>
+            <p style={{ color: 'red',marginTop:'10px' }}>{errors.email?.message}</p>
           </div>
 
           {/* Mot de passe */}
           <div className="last">
             <input type="password" {...register('password')} placeholder="Mot de passe :" />
-            <p style={{ color: 'red' }}>{errors.password?.message}</p>
+            <p style={{ color: 'red',marginTop:'10px' }}>{errors.password?.message}</p>
           </div>
           {/* check box*/}
           <div className="check-box">

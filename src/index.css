@@ -8,11 +8,16 @@
   -moz-osx-font-smoothing: grayscale;
   --primary-color: #ffffff;
   --button-color: #02c17d;
+  --button-color: #02c17d;
+  --input-text-color: rgba(104, 112, 141, 1);
+  --text-color-secondary: rgba(126, 126, 126, 1);
 }
 
 #root {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+
 }
 * {
   margin: 0;
@@ -30,4 +35,6 @@ textarea:focus {
 body,
 html {
   min-height: 100vh;
+  text-decoration: none;
+  list-style: none;
 }
