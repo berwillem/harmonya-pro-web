@@ -1,0 +1,176 @@
+table {
+  width: 98% !important;
+  /* border-collapse: collapse; */
+  /* border-radius: 16px; */
+  overflow: hidden;
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+table tr {
+  border: none;
+
+  height: 55px;
+}
+
+table td {
+  border: none;
+
+  padding: 0 10px;
+  vertical-align: middle;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 120px;
+  max-width: 200px;
+  color: rgba(126, 126, 126, 1);
+}
+.icon-prop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: rgba(255, 143, 0, 0.1);
+  font-size: 12px;
+  font-weight: 600;
+}
+.icon-prop svg {
+  color: rgb(23, 21, 19);
+}
+.li-action:last-child .icon-prop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: rgba(184, 184, 184, 1);
+}
+.li-action {
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+}
+.li-action:last-child .icon-prop svg {
+  color: black;
+}
+.head td {
+  font-weight: 600;
+  color: black;
+}
+.head td:first-child {
+  border-radius: 8px 0 0 0;
+}
+.head td:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+table td:last-child {
+  min-width: 70px;
+  position: sticky;
+  right: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+.head {
+  margin-bottom: 10px;
+}
+table .head td:last-child {
+  position: sticky;
+  right: 0;
+  /* background-color: #f3f3f4; */
+  z-index: 1;
+}
+.head td:not(:last-child) {
+  /* background-color: rgba(140, 140, 143, 0.1); */
+}
+.css-uywun8-MuiPaper-root-MuiPopover-paper {
+  background-color: transparent !important;
+}
+.MuiPaper-root {
+  --Paper-shadow: 0 !important;
+}
+.table .pagination {
+  position: sticky;
+  top: auto; /* Empêche la stickiness verticale */
+  bottom: auto;
+
+  z-index: 10;
+
+  text-align: center;
+  padding: 10px 0;
+}
+table td span {
+  vertical-align: middle;
+  /* margin: 0 5px; */
+}
+table td:last-child {
+  text-align: right;
+  color: black;
+}
+
+table td a {
+  color: black;
+}
+
+.row {
+  color: rgba(126, 126, 126, 1);
+}
+
+.check {
+  background-color: rgba(255, 0, 31, 0.15);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.check svg {
+  color: rgba(255, 0, 31, 1);
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  padding: 15px;
+  /* margin: 0 2% 20px 0; */
+}
+
+.table-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table-select {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.table-container {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  width: 98%;
+  margin-top: 25px;
+}
+.action-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.action-item:last-child {
+  border-bottom: none;
+}

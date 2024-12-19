@@ -25,7 +25,7 @@ export const sidebarLinks: SidebarLink[] = [
   { label: "Agenda", path: "agenda", icon: <FaCalendarAlt size={20} /> },
   {
     label: "Mes reservations",
-    path: "mes-reservations",
+    path: "MesReservations",
     icon: <LiaPencilRulerSolid size={26} />,
     customStyle: { paddingLeft: "0", gap: "10px" },
   },

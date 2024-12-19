@@ -2,6 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { sidebarLinks } from "../../data/SidebarLinks.js"; // Import sidebarLinks array
 import { FiBell, FiGlobe, FiUser } from "react-icons/fi"; // Icons for Navbar
+import { MdOutlineTranslate } from "react-icons/md";
+
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
@@ -15,7 +17,7 @@ const Navbar: React.FC = () => {
 
       <div className="navbar-icons">
         <FiBell size={24} />
-        <FiGlobe size={24} />
+        <MdOutlineTranslate size={24} />
         <FiUser size={24} />
       </div>
     </div>
