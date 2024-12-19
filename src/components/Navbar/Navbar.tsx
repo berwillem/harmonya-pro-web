@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { sidebarLinks } from "../Sidebar/Sidebar"; // Import sidebarLinks array
+import { sidebarLinks } from "../../data/SidebarLinks.js"; // Import sidebarLinks array
 import { FiBell, FiGlobe, FiUser } from "react-icons/fi"; // Icons for Navbar
 import "./Navbar.css";
 
