@@ -1,10 +1,5 @@
-.overlay {
-  min-width: 19.5vw;
-  min-height: 100vh;
-}
-
 .sidebar {
-  width: 17.5vw;
+  width: 17.5vw; 
   height: 100vh;
   background-color: #f9f9f9;
   padding: 20px;
@@ -16,6 +11,12 @@
   left: 0;
 }
 
+.sidebarHeader h2 {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+/* Navigation styles */
 .navLink {
   color: #67676c;
   display: flex;
@@ -23,9 +24,12 @@
   gap: 15px;
 }
 
-.sidebar-header h2 {
-  font-size: 17px;
-  margin-bottom: 20px;
+.navLink:hover {
+  background-color: #f4f4f4;
+}
+
+.navLink.active {
+  color: #2da561 !important;
 }
 
 nav ul {
@@ -36,21 +40,7 @@ nav ul {
 nav ul li {
   margin-bottom: 15px;
 }
-nav {
-  margin-bottom: 60px;
-}
 
-.navLink:hover {
-  background-color: #f4f4f4;
-}
-
-.sidebar li .active {
-  /* background-color: #e5f7e8; */
-  color: #2da561 !important;
-}
-a {
-  font-size: 14px;
-}
 .section {
   font-size: 15px;
   color: #ababae;
@@ -61,34 +51,28 @@ a {
   gap: 15px;
 }
 
+.line {
+  height: 1px;
+  width: 100%;
+  margin: 5px 0;
+}
+
 .sidebarFooter a {
   font-size: 14px;
   color: #2da561;
 }
+
 .sidebarFooter {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.logout a {
-  color: #e74c3c;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.sidebar li * {
-  padding-left: 2px;
-}
-.line {
-  height: 1px;
-  width: 100%;
-  margin: 5px 0;
-}
 .logout {
   display: flex;
   gap: 5px;
 }
+
 .logout button {
   background-color: white;
   cursor: pointer;
@@ -109,11 +93,62 @@ a {
   border: 2px solid #8c8c8f;
 }
 
-@media screen and (max-width: 1280px) {
-  .overlay {
-    display: none;
-  }
+@media screen and (max-width: 900px) {
   .sidebar {
-    display: none;
+    width: 75vw; /* Wider sidebar for mobile */
+    left: -100%; /* Hidden off-screen by default */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+    transform: translateX(-100%);
+    height: 100%;
+  }
+
+  .sidebarVisible {
+    transform: translateX(0); /* Slide in when visible */
+    left: 0;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  .overlay.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .closeButton {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+}
+
+.closeButton {
+  display: none;
+}
+@media screen and (max-height: 615px) {
+  .sidebar {
+    height: 100vh;
+  }
+  nav ul li {
+    margin-bottom: 10px;
+  }
+  .sidebarFooter {
+    gap: 5px;
+    margin-top: 10px;
   }
 }

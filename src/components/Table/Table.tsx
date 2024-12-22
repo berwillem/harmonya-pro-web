@@ -98,67 +98,69 @@ export default function Table({
             </select>
           )}
         </div>
-      )}
-      <table>
-        <thead>
-          <tr className="head">
-            {tr.map((header, index) => (
-              <td key={index}>{header}</td>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {td.map((line, rowIndex) => (
-            <tr key={rowIndex}>
-              {Array.isArray(line) ? (
-                line.map((elm, colIndex) => (
-                  <td key={colIndex}>
-                    {elm?.text && (
-                      <span
-                        style={{
-                          backgroundColor:
-                            statusColors[elm.text] || "transparent",
-                          color: Colors[elm.text] || "inherit",
-                          // padding: PADDING[elm.text] || "inherit",
-                          borderRadius: "4px",
-                        }}
-                      >
-                        {elm.text}
-                      </span>
-                    )}
-                    {elm?.icons &&
-                      elm.icons.map((iconObj, iconIndex) => (
+      )}{" "}
+      <div className="table-div">
+        <table>
+          <thead>
+            <tr className="head">
+              {tr.map((header, index) => (
+                <td key={index}>{header}</td>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {td.map((line, rowIndex) => (
+              <tr key={rowIndex}>
+                {Array.isArray(line) ? (
+                  line.map((elm, colIndex) => (
+                    <td key={colIndex}>
+                      {elm?.text && (
                         <span
-                          key={iconIndex}
-                          onClick={(e) =>
-                            iconObj.type === "pop"
-                              ? handleClick(
-                                  e as React.MouseEvent<HTMLButtonElement>,
-                                  rowIndex
-                                )
-                              : navigate(iconObj.link)
-                          }
                           style={{
-                            backgroundColor: iconObj.color1 || "transparent",
-                            cursor: "pointer",
+                            backgroundColor:
+                              statusColors[elm.text] || "transparent",
+                            color: Colors[elm.text] || "inherit",
+                            // padding: PADDING[elm.text] || "inherit",
+                            borderRadius: "4px",
                           }}
                         >
-                          {React.createElement(iconObj.icon[0], {
-                            style: { color: iconObj.color2 || "inherit" },
-                          })}
+                          {elm.text}
                         </span>
-                      ))}
+                      )}
+                      {elm?.icons &&
+                        elm.icons.map((iconObj, iconIndex) => (
+                          <span
+                            key={iconIndex}
+                            onClick={(e) =>
+                              iconObj.type === "pop"
+                                ? handleClick(
+                                    e as React.MouseEvent<HTMLButtonElement>,
+                                    rowIndex
+                                  )
+                                : navigate(iconObj.link)
+                            }
+                            style={{
+                              backgroundColor: iconObj.color1 || "transparent",
+                              cursor: "pointer",
+                            }}
+                          >
+                            {React.createElement(iconObj.icon[0], {
+                              style: { color: iconObj.color2 || "inherit" },
+                            })}
+                          </span>
+                        ))}
+                    </td>
+                  ))
+                ) : (
+                  <td colSpan={line.colspan} style={{ textAlign: "center" }}>
+                    {line.text}
                   </td>
-                ))
-              ) : (
-                <td colSpan={line.colspan} style={{ textAlign: "center" }}>
-                  {line.text}
-                </td>
-              )}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>{" "}
+      </div>
       <Popover
         id={id}
         open={open}
