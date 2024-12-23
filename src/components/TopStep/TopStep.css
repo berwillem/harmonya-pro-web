@@ -2,37 +2,61 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100px;
+  min-height: 100px;
+  height: auto;
+  gap: 10px;
 }
 
 .step {
   width: 100%;
 }
 .progresse {
-
   height: 5px;
   background-color: rgba(24, 145, 102, 1);
+  transition: 0.5s;
 }
 .content-top-step {
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  height: 70px;
   flex-direction: row;
-  flex: 1;
+
   padding: 0 40px;
+}
+.infos-confimation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.infos-confimation li {
+  border-radius: 8px;
+  padding: 5px 15px;
+  background-color: rgba(242, 242, 242, 1);
+  font-size: 16px;
+  font-weight: 600;
+}
+.infos-confimation li span {
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-radius: 5px;
 }
 .back {
   width: 30px;
+  cursor: pointer;
 }
-.back svg{
+.back svg {
   width: 30px;
   height: 30px;
 }
 .content-top-step span {
   width: 30px;
 }
-.text-logo{
+.text-logo {
   font-size: 24px;
   font-weight: 700;
 }
