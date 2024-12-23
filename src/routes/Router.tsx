@@ -5,6 +5,10 @@ import MainLayout from "@/layouts/MainLayout";
 import AddSevice from "@/pages/AddService/AddService";
 import MesReservations from "@/pages/MesReservations/MesReservations";
 import Demandes from "@/pages/Demandes/Demandes";
+import Abonnements from "@/pages/Abonnements/Abonnements";
+import Boutique from "@/pages/Boutique/Boutique";
+import Settings from "@/pages/Settings/Settings";
+import Compte from "@/pages/Compte/Compte";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +22,28 @@ const Router = createBrowserRouter([
       {
         path: "demande-reservations",
         element: <Demandes />,
+      },
+      {
+        path: "Abonnements",
+        element: <Abonnements />,
+      },
+      {
+        path: "boutique",
+        element: <Boutique />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+        children: [
+          {
+            path: "compte",
+            element: <Compte />,
+          },
+          {
+            path: "Abonnements",
+            element: <Abonnements />,
+          },
+        ],
       },
     ],
   },
