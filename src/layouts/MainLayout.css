@@ -1,3 +1,11 @@
 .mainLayout {
   display: flex;
+  margin-left: 18.5vw;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 900px) {
+  .mainLayout {
+    margin-left: 0;
+  }
 }

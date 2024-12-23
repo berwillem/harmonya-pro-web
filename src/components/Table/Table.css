@@ -165,6 +165,8 @@ table td a {
   border-radius: 16px;
   width: 98%;
   margin-top: 25px;
+  overflow: hidden;
+  margin-bottom: 45px;
 }
 .action-item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -173,4 +175,33 @@ table td a {
 
 .action-item:last-child {
   border-bottom: none;
+}
+
+@media screen and (max-width: 900px) {
+  .table-container {
+    margin: 0;
+    width: unset;
+    transform: translateX(12px);
+  }
+  .table-div {
+    overflow-x: scroll;
+  }
+  .table-div td:last-child {
+    padding-right: 30px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .table-container {
+    width: unset;
+    margin-bottom: 25px;
+  }
+  .table-div {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  tr td {
+    min-width: 40vw;
+  }
 }

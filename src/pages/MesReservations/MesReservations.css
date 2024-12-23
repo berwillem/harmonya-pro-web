@@ -3,3 +3,9 @@
   flex-wrap: wrap;
   gap: 2%;
 }
+
+@media screen and (max-width: 900px) {
+  .count-cards-container {
+    justify-content: center;
+  }
+}

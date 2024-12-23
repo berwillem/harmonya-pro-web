@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 import { MdOutlineHelpOutline } from "react-icons/md";
@@ -5,15 +6,34 @@ import { RiBardLine } from "react-icons/ri";
 import { LuLogOut } from "react-icons/lu";
 import { sidebarLinks } from "../../data/SidebarLinks.js";
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  isVisible: boolean;
+  onClose: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose(); 
+    }
+  };
+
   return (
-    <>
-      <div className={styles.overlay}></div>
-      <div className={styles.sidebar}>
+    <div
+      className={`${styles.overlay} ${isVisible ? styles.show : ""}`}
+      onClick={handleOverlayClick}
+    >
+      <div
+        className={`${styles.sidebar} ${
+          isVisible ? styles.sidebarVisible : ""
+        }`}
+      >
+        <button className={styles.closeButton} onClick={onClose}>
+          ✖
+        </button>
         <div className={styles.sidebarHeader}>
           <h2>Harmonya</h2>
         </div>
-
         <nav>
           <ul>
             {sidebarLinks.map((link, index) =>
@@ -39,7 +59,6 @@ const Sidebar: React.FC = () => {
             )}
           </ul>
         </nav>
-
         <div className={styles.sidebarFooter}>
           <NavLink to="intelligence" className={styles.navLink}>
             <RiBardLine size={22} /> Harmonya intelligence
@@ -58,7 +77,7 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

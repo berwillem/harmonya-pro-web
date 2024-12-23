@@ -27,12 +27,17 @@ export const sidebarLinks: SidebarLink[] = [
     label: "Mes reservations",
     path: "MesReservations",
     icon: <LiaPencilRulerSolid size={26} />,
-    customStyle: { paddingLeft: "0", gap: "10px" },
+    customStyle: {
+      paddingLeft: "0",
+      gap: "10px",
+      transform: "translateX(-3px)",
+    },
   },
   {
     label: "Demande de reservations",
     path: "demande-reservations",
     icon: <VscGitPullRequestCreate size={20} />,
+    customStyle: { fontSize: "smaller" },
   },
 
   { section: "Services" },

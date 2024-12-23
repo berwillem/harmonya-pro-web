@@ -9,6 +9,8 @@
   flex-direction: column;
   align-items: flex-start;
   width: 23%;
+  min-width: 160px;
+  margin-bottom: 10px;
 }
 .count-card * {
   text-align: left;
