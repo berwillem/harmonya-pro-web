@@ -11,6 +11,7 @@ import CheckPoint2 from "@/pages/CheckPoint2/CheckPoint2";
 import CheckPoint1 from "@/pages/CheckPoint1/CheckPoint1";
 import MultiStepForm2 from "@/pages/MultiStepForm2/MultiStepForm2";
 import ValidationPage from "@/pages/ValidationPage/ValidationPage";
+import Agenda from "@/pages/Agenda/Agenda";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -25,9 +26,11 @@ const Router = createBrowserRouter([
         path: "demande-reservations",
         element: <Demandes />,
       },
+      { path: "/agenda", element: <Agenda /> },
     ],
   },
   { path: "/login", element: <Login /> },
+
   {
     path: "/createProfil",
     element: <CreateProfil />,
