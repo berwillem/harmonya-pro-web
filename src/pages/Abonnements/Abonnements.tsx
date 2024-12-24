@@ -99,12 +99,14 @@ export default function Abonnements() {
             </div>
           </div>
         </div>
-        <Table
-          title="Historique de la facturation"
-          onOptionChange={(selectedOption) => console.log(selectedOption)}
-          tr={tableHeaders}
-          td={tableData}
-        ></Table>
+        <div className="second-card">
+          <Table
+            title="Historique de facturation"
+            onOptionChange={(selectedOption) => console.log(selectedOption)}
+            tr={tableHeaders}
+            td={tableData}
+          ></Table>
+        </div>
       </div>
     </>
   );

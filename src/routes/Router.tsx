@@ -9,6 +9,7 @@ import Abonnements from "@/pages/Abonnements/Abonnements";
 import Boutique from "@/pages/Boutique/Boutique";
 import Settings from "@/pages/Settings/Settings";
 import Compte from "@/pages/Compte/Compte";
+import Securite from "@/pages/Securite/Securite";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +43,10 @@ const Router = createBrowserRouter([
           {
             path: "Abonnements",
             element: <Abonnements />,
+          },
+          {
+            path: "securite",
+            element: <Securite />,
           },
         ],
       },
