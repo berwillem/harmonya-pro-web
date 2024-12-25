@@ -15,7 +15,9 @@ const schema = yup.object().shape({
         .mixed<File>()
         .required("A file is required")
         .test("fileType", "Only images are allowed", (file) =>
-          file ? ["image/jpeg", "image/png", "image/jpg"].includes(file.type) : false
+          file
+            ? ["image/jpeg", "image/png", "image/jpg"].includes(file.type)
+            : false
         )
     )
     .min(1, "You must upload at least 1 image")
@@ -54,7 +56,7 @@ export default function ServiceStep2() {
   }, [step, formData, setValue]);
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    updateStepData(step, { images: selectedImages }); // Sauvegarder les images dans le store
+    updateStepData(step, { images: selectedImages });
     nextStep();
   };
 
@@ -83,7 +85,10 @@ export default function ServiceStep2() {
 
   const handleDragStart = (index: number) => setDraggedIndex(index);
 
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>, index: number) => {
+  const handleDragOver = (
+    e: React.DragEvent<HTMLDivElement>,
+    index: number
+  ) => {
     e.preventDefault();
     if (draggedIndex !== null && draggedIndex !== index) {
       const updatedImages = [...selectedImages];
@@ -131,7 +136,9 @@ export default function ServiceStep2() {
               />
               <p>Upload files</p>
             </div>
-            {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
+            {error && (
+              <p style={{ color: "red", marginTop: "10px" }}>{error}</p>
+            )}
             {errors.images && (
               <p style={{ color: "red", marginTop: "10px" }}>
                 {(errors.images.message as string) || ""}
@@ -159,7 +166,9 @@ export default function ServiceStep2() {
                       <h2>{image?.name}</h2>
                       <p>{(image?.size / 1000).toFixed(2)} KB</p>
                     </div>
-                    {index === 0 && <div className="cover-label">Cover image</div>}
+                    {index === 0 && (
+                      <div className="cover-label">Cover image</div>
+                    )}
                   </div>
                 </div>
                 <div className="drag-effect">

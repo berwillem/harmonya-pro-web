@@ -1,3 +1,4 @@
+// FIXME: reorganize imports
 import CreateProfil from "@/pages/CreateProfil/CreateProfil";
 import Login from "@/pages/Login/Login";
 import MultiStepForm from "@/pages/MultiStepForm/MultiStepForm";
