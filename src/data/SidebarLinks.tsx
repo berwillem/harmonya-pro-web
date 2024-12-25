@@ -9,23 +9,23 @@ import { PiMedal } from "react-icons/pi";
 import { SidebarLink } from "../types/SidebarLink";
 
 export const sidebarLinks: SidebarLink[] = [
-  { label: "Home", path: "", icon: <FaHome size={20} /> },
+  { label: "Home", path: "/", icon: <FaHome size={20} /> },
   {
     label: "Dashboard",
-    path: "dashboard",
+    path: "/Dashboard",
     icon: <MdDashboard size={20} />,
   },
   {
     label: "Statistic",
-    path: "statistics",
+    path: "/Statistics",
     icon: <IoMdStats size={20} />,
   },
 
   { section: "Reservations" },
-  { label: "Agenda", path: "agenda", icon: <FaCalendarAlt size={20} /> },
+  { label: "Agenda", path: "/agenda", icon: <FaCalendarAlt size={20} /> },
   {
     label: "Mes reservations",
-    path: "MesReservations",
+    path: "/MesReservations",
     icon: <LiaPencilRulerSolid size={26} />,
     customStyle: {
       paddingLeft: "0",
@@ -35,7 +35,7 @@ export const sidebarLinks: SidebarLink[] = [
   },
   {
     label: "Demande de reservations",
-    path: "demande-reservations",
+    path: "/Demande-reservations",
     icon: <VscGitPullRequestCreate size={20} />,
     customStyle: { fontSize: "smaller" },
   },
@@ -43,18 +43,18 @@ export const sidebarLinks: SidebarLink[] = [
   { section: "Services" },
   {
     label: "Ajouter un service",
-    path: "addservice",
+    path: "/Addservice",
     icon: <PiMedal size={24} />,
     customStyle: { paddingLeft: "0", gap: "13px" },
   },
   {
     label: "Boutique",
-    path: "boutique",
+    path: "/Boutique",
     icon: <HiOutlineBookOpen size={20} />,
   },
   {
     label: "Abonnements",
-    path: "abonnements",
+    path: "/Abonnements",
     icon: <BsSuitcaseLg size={20} />,
   },
 ];

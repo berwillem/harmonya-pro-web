@@ -7,11 +7,16 @@ import MainLayout from "@/layouts/MainLayout";
 import AddSevice from "@/pages/AddService/AddService";
 import MesReservations from "@/pages/MesReservations/MesReservations";
 import Demandes from "@/pages/Demandes/Demandes";
+import Abonnements from "@/pages/Abonnements/Abonnements";
+import Boutique from "@/pages/Boutique/Boutique";
+import Settings from "@/pages/Settings/Settings";
+import Compte from "@/pages/Compte/Compte";
 import CheckPoint2 from "@/pages/CheckPoint2/CheckPoint2";
 import CheckPoint1 from "@/pages/CheckPoint1/CheckPoint1";
 import MultiStepForm2 from "@/pages/MultiStepForm2/MultiStepForm2";
 import ValidationPage from "@/pages/ValidationPage/ValidationPage";
 import Agenda from "@/pages/Agenda/Agenda";
+
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +30,28 @@ const Router = createBrowserRouter([
       {
         path: "demande-reservations",
         element: <Demandes />,
+      },
+      {
+        path: "Abonnements",
+        element: <Abonnements />,
+      },
+      {
+        path: "boutique",
+        element: <Boutique />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+        children: [
+          {
+            path: "compte",
+            element: <Compte />,
+          },
+          {
+            path: "Abonnements",
+            element: <Abonnements />,
+          },
+        ],
       },
       { path: "/agenda", element: <Agenda /> },
     ],
