@@ -11,6 +11,7 @@ import Abonnements from "@/pages/Abonnements/Abonnements";
 import Boutique from "@/pages/Boutique/Boutique";
 import Settings from "@/pages/Settings/Settings";
 import Compte from "@/pages/Compte/Compte";
+import Securite from "@/pages/Securite/Securite";
 import CheckPoint2 from "@/pages/CheckPoint2/CheckPoint2";
 import CheckPoint1 from "@/pages/CheckPoint1/CheckPoint1";
 import MultiStepForm2 from "@/pages/MultiStepForm2/MultiStepForm2";
@@ -53,6 +54,10 @@ const Router = createBrowserRouter([
           {
             path: "Abonnements",
             element: <Abonnements />,
+          },
+          {
+            path: "securite",
+            element: <Securite />,
           },
         ],
       },

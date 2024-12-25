@@ -57,6 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
               ) : (
                 <li key={index}>
                   <NavLink
+                    onClick={onClose}
                     to={link.path as string}
                     className={({ isActive }) =>
                       isActive
@@ -87,7 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
             <button>
               <MdOutlineHelpOutline size={30} color="#8C8C8F" />
             </button>
-            <button onClick={() => navigate("/Settings")}>
+            <button onClick={() => navigate("/Settings/compte")}>
               <GoGear size={30} color="#8C8C8F" />
             </button>
           </div>

@@ -2,18 +2,19 @@
   display: flex;
   flex-direction: column;
   /* gap: 15px; */
-  padding: 25px;
+  /* padding: 25px; */
 }
 
 .first-card {
   background: #ffffff;
   border-radius: 16px;
-  width: 100%;
+  /* width: 90%; */
   padding: 40px 30px;
   border: 1px solid #0000001a;
   display: flex;
   flex-direction: column;
   gap: 60px;
+  margin: 15px 30px 0 15px;
 }
 
 .first-card-content {
@@ -134,6 +135,9 @@
   .first-card {
     gap: 10px;
   }
+  .second-card {
+    margin: 15px 0 0 0 !important;
+  }
 }
 @media screen and (max-width: 560px) {
   .first-card-buttons {
@@ -150,4 +154,18 @@
   .first-card-button button:last-child {
     max-width: 100px;
   }
+}
+
+.second-card {
+  background: #ffffff;
+  border-radius: 16px;
+  /* width: 90%; */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 0px 30px 0 15px;
+}
+
+.second-card > * {
+  width: 100% !important;
 }
