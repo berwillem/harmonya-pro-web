@@ -7,7 +7,7 @@ export default function MainLayout() {
   return (
     <div className="mainLayout">
       <Sidebar></Sidebar>
-      <div style={{ display: "flex", flexDirection: "column" , width: "100%" }}>
+      <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
         <Navbar></Navbar>
         <Outlet></Outlet>
       </div>

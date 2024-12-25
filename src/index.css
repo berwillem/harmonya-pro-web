@@ -8,7 +8,9 @@
   -moz-osx-font-smoothing: grayscale;
   --primary-color: #ffffff;
   --button-color: #02c17d;
-  --button-color: #02c17d;
+  --alert-color: #ff8000;
+  --decline-color: #f30004;
+  --dark-button-color: #189166;
   --input-text-color: rgba(104, 112, 141, 1);
   --text-color-secondary: rgba(126, 126, 126, 1);
 }

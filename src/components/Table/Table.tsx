@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Table.css";
 import { useNavigate } from "react-router-dom";
 import { Popover } from "@mui/material";
-import { Link } from "react-router-dom";
 
 interface Action {
   text: string;
@@ -82,6 +81,7 @@ export default function Table({
     pending: "7px 15px",
     completed: "7px 15px",
   };
+  const isFirstHeaderGreen = tr[0] === "#";
 
   return (
     <div className="table-container">
@@ -98,13 +98,15 @@ export default function Table({
             </select>
           )}
         </div>
-      )}{" "}
+      )}
       <div className="table-div">
         <table>
           <thead>
             <tr className="head">
               {tr.map((header, index) => (
-                <td key={index}>{header}</td>
+                <td className={header === "#" ? "green" : ""} key={index}>
+                  {header}
+                </td>
               ))}
             </tr>
           </thead>
@@ -113,16 +115,29 @@ export default function Table({
               <tr key={rowIndex}>
                 {Array.isArray(line) ? (
                   line.map((elm, colIndex) => (
-                    <td key={colIndex}>
+                    <td
+                      key={colIndex}
+                      className={
+                        isFirstHeaderGreen && colIndex === 0 ? "green" : ""
+                      }
+                    >
                       {elm?.text && (
                         <span
                           style={{
                             backgroundColor:
                               statusColors[elm.text] || "transparent",
                             color: Colors[elm.text] || "inherit",
-                            // padding: PADDING[elm.text] || "inherit",
                             borderRadius: "4px",
                           }}
+                          className={
+                            elm?.text === "Payé"
+                              ? "paye"
+                              : elm?.text == "A venir"
+                              ? "pending"
+                              : elm?.text == "Annulé"
+                              ? "annule"
+                              : ""
+                          }
                         >
                           {elm.text}
                         </span>
