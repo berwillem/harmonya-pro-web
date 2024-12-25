@@ -15,6 +15,9 @@ import CheckPoint2 from "@/pages/CheckPoint2/CheckPoint2";
 import CheckPoint1 from "@/pages/CheckPoint1/CheckPoint1";
 import MultiStepForm2 from "@/pages/MultiStepForm2/MultiStepForm2";
 import ValidationPage from "@/pages/ValidationPage/ValidationPage";
+import Register from "@/pages/Register/Register";
+import NotFound from "@/pages/NotFound/NotFound";
+import ForgetPassword from "@/pages/ForgetPassword/ForgetPassword";
 import Agenda from "@/pages/Agenda/Agenda";
 
 const Router = createBrowserRouter([
@@ -57,10 +60,15 @@ const Router = createBrowserRouter([
     ],
   },
   { path: "/login", element: <Login /> },
-
+  { path: "/Register", element: <Register /> },
+  { path: "/ForgetPassword", element: <ForgetPassword /> },
   {
     path: "/createProfil",
     element: <CreateProfil />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
   { path: "/subscriptionChoise", element: <SubscriptionChoise /> },
   { path: "/multiStepForm", element: <MultiStepForm /> },
