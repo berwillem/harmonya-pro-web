@@ -1,0 +1,43 @@
+.mini-nav {
+  display: flex;
+  gap: 16px;
+  padding: 10px 30px 10px 30px;
+  flex-wrap: wrap;
+}
+
+.mini-nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.mini-nav a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-nav a.active {
+  background-color: var(--dark-button-color);
+  color: #fff;
+  border-color: var(--dark-button-color);
+}
+
+.mini-nav a.active .icon {
+  color: #fff;
+}
+
+.mini-nav a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.mini-nav a.active:hover {
+  opacity: 0.9;
+  background-color: var(--dark-button-color);
+}

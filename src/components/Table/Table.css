@@ -8,7 +8,6 @@ table {
 
 table tr {
   border: none;
-
   height: 55px;
 }
 
@@ -21,7 +20,7 @@ table td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-width: 120px;
+  min-width: 110px;
   max-width: 200px;
   color: rgba(126, 126, 126, 1);
 }
@@ -181,8 +180,9 @@ table td a {
   .table-container {
     margin: 0;
     width: unset;
-    transform: translateX(12px);
+    transform: translateX(15px);
   }
+
   .table-div {
     overflow-x: scroll;
   }
@@ -202,6 +202,32 @@ table td a {
 
 @media screen and (max-width: 415px) {
   tr td {
-    min-width: 40vw;
+    min-width: 20vw;
   }
+}
+
+thead tr td.green:first-child ~ tbody tr td:first-child,
+.green {
+  color: #189166 !important;
+  min-width: 60px !important;
+}
+
+.pending {
+  color: #ffbe31 !important;
+  background-color: #ffbb001a !important;
+  border-radius: 8px;
+  padding: 5px;
+}
+.paye {
+  color: #189166 !important;
+  background-color: #02c17d1a !important;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.annule {
+  color: #ff0000 !important;
+  background-color: #ff00001a !important;
+  border-radius: 8px;
+  padding: 5px;
 }

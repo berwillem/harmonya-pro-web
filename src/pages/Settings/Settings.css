@@ -1,0 +1,4 @@
+.SettingsLayout {
+  display: flex;
+  flex-direction: column;
+}

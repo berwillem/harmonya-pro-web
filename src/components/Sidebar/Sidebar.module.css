@@ -1,5 +1,5 @@
 .sidebar {
-  width: 17.5vw; 
+  width: 17.5vw;
   height: 100vh;
   background-color: #f9f9f9;
   padding: 20px;
@@ -89,7 +89,8 @@ nav ul li {
   border: 2px solid red;
 }
 
-.logout button:nth-child(2) {
+.logout button:nth-child(2),
+.logout button:last-child {
   border: 2px solid #8c8c8f;
 }
 
@@ -103,7 +104,7 @@ nav ul li {
   }
 
   .sidebarVisible {
-    transform: translateX(0); /* Slide in when visible */
+    transform: translateX(0); 
     left: 0;
   }
 

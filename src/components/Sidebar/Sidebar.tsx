@@ -1,10 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 import { MdOutlineHelpOutline } from "react-icons/md";
 import { RiBardLine } from "react-icons/ri";
 import { LuLogOut } from "react-icons/lu";
 import { sidebarLinks } from "../../data/SidebarLinks.js";
+import { GoGear } from "react-icons/go";
 
 interface SidebarProps {
   isVisible: boolean;
@@ -14,19 +15,31 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
-      onClose(); 
+      onClose();
     }
   };
+  const navigate = useNavigate();
 
   return (
     <div
       className={`${styles.overlay} ${isVisible ? styles.show : ""}`}
       onClick={handleOverlayClick}
+      // style={{
+      //   opacity: isVisible ? 1 : 0,
+      //   zIndex: isVisible ? 4 : -1,
+      // }}
     >
       <div
         className={`${styles.sidebar} ${
           isVisible ? styles.sidebarVisible : ""
         }`}
+        // style={{
+        //   transform: isVisible ? "translateX(0)" : "translateX(-100%)",
+        //   transition: "0.5s",
+        //   boxShadow: isVisible
+        //     ? "rgba(0, 0, 0, 0.5) 20px 0px 100px 0px"
+        //     : "none",
+        // }}
       >
         <button className={styles.closeButton} onClick={onClose}>
           ✖
@@ -44,6 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
               ) : (
                 <li key={index}>
                   <NavLink
+                    onClick={onClose}
                     to={link.path as string}
                     className={({ isActive }) =>
                       isActive
@@ -73,6 +87,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
             </button>
             <button>
               <MdOutlineHelpOutline size={30} color="#8C8C8F" />
+            </button>
+            <button onClick={() => navigate("/Settings/compte")}>
+              <GoGear size={30} color="#8C8C8F" />
             </button>
           </div>
         </div>
