@@ -1,15 +1,17 @@
-import "./Login.css";
+import "./Register.css";
 import login from "../../assets/login.jpeg";
 import { Link } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+
 type FormInputs = {
   email: string;
   password: string;
-
+  confirmPassword: string;
 };
-export default function Login() {
+
+export default function Register() {
   // Schéma de validation avec Yup
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -18,6 +20,9 @@ export default function Login() {
     password: Yup.string()
       .min(6, "Le mot de passe doit contenir au moins 6 caractères")
       .required("Le mot de passe est obligatoire"),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), undefined], "Les mots de passe doivent correspondre")
+      .required("La confirmation du mot de passe est obligatoire"),
   });
 
   // Configuration React Hook Form
@@ -25,22 +30,24 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormInputs>({
     resolver: yupResolver(validationSchema),
   });
 
   // Gestion de soumission du formulaire
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log("Données du formulaire :", data);
-    // Envoyer les données à l'API ou gérer la logique de connexion ici
+    // Envoyer les données à l'API ou gérer la logique d'inscription ici
   };
 
   return (
     <main className="login">
       <div className="form-login">
         <div className="text">
-          <h1>Harmonya<sup> Pro</sup></h1>
-          <h2>Login</h2>
+          <h1>
+            Harmonya<sup> Pro</sup>
+          </h1>
+          <h2>Register</h2>
           <p>Inter your information to start</p>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -60,16 +67,21 @@ export default function Login() {
             />
             {errors.password && <p className="error">{errors.password.message}</p>}
           </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Confirme password"
+              {...register("confirmPassword")}
+            />
+            {errors.confirmPassword && (
+              <p className="error">{errors.confirmPassword.message}</p>
+            )}
+          </div>
+          <button type="submit">Register</button>
           <p>
-            <Link to="/ForgetPassword">
-              <span>Forgot your password?</span>
-            </Link>
-          </p>
-          <button type="submit">Log in</button>
-          <p>
-            Don't have an account?{" "}
-            <Link to="/Register">
-              <span>Sign up and get started!</span>
+            Already have an account?
+            <Link to="/login">
+              <span> Sign In</span>
             </Link>
           </p>
         </form>
