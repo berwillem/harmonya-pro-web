@@ -1,0 +1,45 @@
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.warning-text {
+  color: #ff9800;
+}
+
+.delete-button2 {
+  background-color: #f44336 !important;
+  color: #fff !important;
+  border: 1px solid #b6332a !important;
+  width: 24%;
+  min-width: 240px !important;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.delete-section > .first-card-alert h1 {
+  font-family: Sora;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ff8000;
+}
+
+/* .css-1myc5fd-MuiButtonBase-root-MuiButton-root.Mui-disabled {
+  background-color: #f44336 !important;
+  color: #fff !important;
+  border: 1px solid #b6332a !important;
+} */
+
+@media screen and (max-width: 750px) {
+  .rootform .form-field {
+    gap: 16px;
+  }
+}

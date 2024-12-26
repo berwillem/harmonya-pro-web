@@ -134,6 +134,7 @@
   }
   .first-card {
     gap: 10px;
+    margin: 15px;
   }
   .second-card {
     margin: 15px 0 0 0 !important;
@@ -149,11 +150,12 @@
     width: 100%;
   }
   .first-card-button {
+    width: 100%;
     flex-direction: column;
   }
-  .first-card-button button:last-child {
+  /* .first-card-button button:last-child {
     max-width: 100px;
-  }
+  } */
 }
 
 .second-card {
