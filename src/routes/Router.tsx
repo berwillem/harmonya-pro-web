@@ -22,6 +22,8 @@ import NotFound from "@/pages/NotFound/NotFound";
 import ForgetPassword from "@/pages/ForgetPassword/ForgetPassword";
 import Agenda from "@/pages/Agenda/Agenda";
 
+import Statistique from "@/pages/Statistique/Statistique";
+
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -63,6 +65,7 @@ const Router = createBrowserRouter([
         ],
       },
       { path: "/agenda", element: <Agenda /> },
+      { path: "/statistics", element: <Statistique /> },
     ],
   },
   { path: "/login", element: <Login /> },
