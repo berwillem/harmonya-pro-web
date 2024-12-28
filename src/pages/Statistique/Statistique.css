@@ -1,0 +1,132 @@
+.statistique {
+  padding: 0px 30px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh);
+}
+.statistique .table-container {
+  width: 100%;
+}
+.stat-header {
+  display: flex;
+  align-items: center;
+  height: 40%;
+  width: 100%;
+  gap: 20px;
+}
+.stat-infos {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+}
+.subscription-stat {
+  border: 1px solid #ff8000;
+  height: 50%;
+  width: 100%;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.subscription-stat .image {
+  width: 108px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subscription-stat .image img {
+  width: 100%;
+  height: 100%;
+}
+.subscription-stat p {
+  font-size: 8px;
+  font-weight: 600;
+}
+.nbr-stat {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.card-stat {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 50%;
+  border-radius: 16px;
+  display: flex;
+
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px 10px;
+}
+.card-stat h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.card-stat p {
+  font-size: 46px;
+  font-weight: 600;
+}
+.chart {
+  width: 70%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 100%;
+  border-radius: 16px;
+}
+@media screen and (max-width: 1240px) {
+  .card-stat h3 {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .card-stat p {
+    font-size: 36px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .statistique {
+    gap: 20px;
+  }
+  .statistique .table-container {
+    transform: translateX(0px) !important;
+  }
+  .stat-header {
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 820px) {
+}
+@media screen and (max-width: 750px) {
+}
+@media screen and (max-width: 590px) {
+
+  .stat-header {
+    height:auto;
+    width: 100%;
+    flex-direction: column;
+  }
+  .stat-infos {
+    width: 100%;
+  }
+  .chart {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 420px) {
+}
+@media screen and (max-width: 385px) {
+}
+@media screen and (max-width: 250px) {
+}
