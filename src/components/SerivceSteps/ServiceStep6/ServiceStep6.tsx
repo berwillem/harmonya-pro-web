@@ -31,7 +31,7 @@ export default function ServiceStep6() {
         <div className="service-infos">
           <div className="image-container2">
             <div className="big-image">
-              {formData[2].images[1] && <img src={createImageURL(formData[2].images[1])} alt="big" />}
+              {formData[2].images[0] && <img src={createImageURL(formData[2].images[0])} alt="big" />}
 
             </div>
             <div className="small-image">

@@ -5,14 +5,17 @@ import * as yup from "yup";
 import { useEffect } from "react";
 import useMultiStepFormStore from "@/store/Zustand/Store";
 
-
 // Schéma de validation avec Yup
 const schema = yup.object().shape({
-  category: yup.string().required("Veuillez choisir une catégorie."),
+  category: yup
+    .array()
+    .of(yup.string().required("Chaque catégorie doit être une chaîne valide."))
+    .min(1, "Veuillez choisir au moins une catégorie.")
+    .required(),
 });
 
 type FormInputs = {
-  category: string;
+  category: string[]; // Tableau de chaînes strictement
 };
 
 const categories = [
@@ -31,20 +34,38 @@ export default function ServiceStep4() {
   const { register, handleSubmit, formState: { errors }, setValue, watch } =
     useForm<FormInputs>({
       resolver: yupResolver(schema),
+      defaultValues: {
+        category: [], // Tableau vide par défaut
+      },
     });
 
   const { step, nextStep, updateStepData, formData } = useMultiStepFormStore();
-  useEffect(() => {
 
-    if (formData && formData[4] && typeof formData[4] === 'object') {
+  useEffect(() => {
+    if (formData && formData[4] && typeof formData[4] === "object") {
       Object.entries(formData[4] as FormInputs).forEach(([key, value]) => {
-        setValue(key as keyof FormInputs, value as string);
+        setValue(key as keyof FormInputs, value as string[]);
       });
     } else {
-      console.warn('formData[1] is undefined or not an object');
+      console.warn("formData[4] is undefined or not an object");
     }
   }, [formData, setValue]);
-  const selectedCategory = watch("category"); // Récupérer la catégorie sélectionnée
+
+  const selectedCategories = watch("category") || []; // Récupérer les catégories sélectionnées
+
+  const handleCategoryClick = (cat: string) => {
+    let updatedCategories;
+
+    if (selectedCategories.includes(cat)) {
+      // Supprimer la catégorie si elle est déjà sélectionnée
+      updatedCategories = selectedCategories.filter((c) => c !== cat);
+    } else {
+      // Ajouter la catégorie si elle n'est pas encore sélectionnée
+      updatedCategories = [...selectedCategories, cat];
+    }
+
+    setValue("category", updatedCategories); // Mettre à jour le tableau
+  };
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     // Sauvegarder les données de cette étape dans Zustand
@@ -53,19 +74,15 @@ export default function ServiceStep4() {
     nextStep();
   };
 
-
-
-  const handleCategoryClick = (cat: string) => {
-    setValue("category", cat); // Définir la catégorie sélectionnée
-  };
-
   return (
     <div className="container">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="Title-button">
           <div className="text">
             <h2>Select a subcategory</h2>
-            <p>check the subcategory or <span>contact support</span> to add one</p>
+            <p>
+              Check the subcategory or <span>contact support</span> to add one
+            </p>
           </div>
           <button type="submit">
             <span>Continue</span>
@@ -77,7 +94,7 @@ export default function ServiceStep4() {
           {categories.map((cat, index) => (
             <div
               key={index}
-              className={`cat ${selectedCategory === cat ? "active-cat" : ""}`}
+              className={`cat ${selectedCategories.includes(cat) ? "active-cat" : ""}`}
               onClick={() => handleCategoryClick(cat)}
             >
               {cat}
@@ -86,7 +103,9 @@ export default function ServiceStep4() {
         </div>
 
         {errors.category && (
-          <p style={{ color: "red", marginTop: "10px" }}>{errors.category.message}</p>
+          <p style={{ color: "red", marginTop: "10px" }}>
+            {errors.category.message}
+          </p>
         )}
 
         <button type="submit" className="button-respo">

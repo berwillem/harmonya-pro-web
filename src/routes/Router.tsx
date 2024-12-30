@@ -13,7 +13,6 @@ import Boutique from "@/pages/Boutique/Boutique";
 import Settings from "@/pages/Settings/Settings";
 import Compte from "@/pages/Compte/Compte";
 import Securite from "@/pages/Securite/Securite";
-import CheckPoint2 from "@/pages/CheckPoint2/CheckPoint2";
 import CheckPoint1 from "@/pages/CheckPoint1/CheckPoint1";
 import MultiStepForm2 from "@/pages/MultiStepForm2/MultiStepForm2";
 import ValidationPage from "@/pages/ValidationPage/ValidationPage";
@@ -77,10 +76,9 @@ const Router = createBrowserRouter([
     element: <NotFound />,
   },
   { path: "/subscriptionChoise", element: <SubscriptionChoise /> },
-  { path: "/multiStepForm", element: <MultiStepForm /> },
+  { path: "/multiStepForm1", element: <MultiStepForm /> },
   { path: "/MultiStepForm2", element: <MultiStepForm2 /> },
-  { path: "/CheckPoint2", element: <CheckPoint2 /> },
-  { path: "/CheckPoint1", element: <CheckPoint1 /> },
+  { path: "/CheckPoint/:id", element: <CheckPoint1 /> },
   { path: "/ValidationPage", element: <ValidationPage /> },
 ]);
 

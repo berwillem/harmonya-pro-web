@@ -6,6 +6,7 @@ import "./ServiceStep3.css";
 import useMultiStepFormStore from "@/store/Zustand/Store";
 import { useEffect } from "react";
 
+
 // Schéma de validation avec Yup
 const schema = yup.object().shape({
   category: yup.string().required("Veuillez choisir une catégorie."),
@@ -47,6 +48,7 @@ export default function ServiceStep3() {
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     // Sauvegarder les données de cette étape dans Zustand
+    
     updateStepData(step, data);
     // Passer à l'étape suivante
     nextStep();

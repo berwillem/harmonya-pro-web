@@ -13,11 +13,28 @@ const colors = [
   { text: "Green", color: "linear-gradient(90deg, #58CC00 0%, #51C100 100%)" },
   { text: "Teal", color: "linear-gradient(90deg, #00FFC8 0%, #00BFFF 100%)" },
 ];
+const categories = [
+  "Coiffure homme",
+  "Coiffure femme",
+  "Coiffure enfant",
+  "Manucure classique",
+  "Manucure express",
+  "Manucure semi-permanente",
+  "Extensions d’ongles",
+  "Maquillage de jour",
+  "Maquillage de soirée",
+];
+
 export default function TopStep({ prog }: { prog: string }) {
-  const { previousStep, step, formData } = useMultiStepFormStore();
+  const { previousStep, step, formData, updateStepData } = useMultiStepFormStore();
 
   const handleClick = () => {
     previousStep();
+  };
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCategory = e.target.value;
+    updateStepData(3, { category: newCategory });
   };
 
   return (
@@ -29,7 +46,7 @@ export default function TopStep({ prog }: { prog: string }) {
         <div className="text-logo">Harmonya</div>
         <span></span>
       </div>
-      {step == 6 && (
+      {step === 6 && (
         <ul className="infos-confimation">
           <li>{formData[1] && formData[1].serviceName}</li>
           <li>{formData[1] && formData[1].servicePrice} DZD</li>
@@ -37,12 +54,26 @@ export default function TopStep({ prog }: { prog: string }) {
             <span
               style={{
                 background: colors.find(
-                  (item) => item.text === formData[5].color
+                  (item) => item.text === formData[5]?.color
                 )?.color,
               }}
             ></span>
           </li>
-          <li>{formData[3] && formData[3].category}</li>
+          <li>
+            <select
+              value={formData[3]?.category || ""}
+              onChange={handleCategoryChange}
+            >
+              <option value="" disabled>
+                Sélectionner une catégorie
+              </option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </li>
         </ul>
       )}
 

@@ -5,7 +5,7 @@ export default function CardSubsciptions() {
   const navigat = useNavigate()
   const handelClick = () => {
 
-    navigat("/CheckPoint1")
+    navigat("/CheckPoint/1")
 
   }
   return (

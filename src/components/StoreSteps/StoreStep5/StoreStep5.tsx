@@ -55,7 +55,7 @@ export default function StoreStep5() {
     if (employees.length > 0) {
 
       updateStepData(step, employees)
-      navigat("/CheckPoint2")
+      navigat("/CheckPoint/2")
 
     } else {
 

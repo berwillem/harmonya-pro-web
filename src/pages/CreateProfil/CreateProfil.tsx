@@ -4,7 +4,8 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { IoArrowForward } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 // Schéma de validation avec Yup
 const schema = yup.object().shape({
   firstName: yup.string().required('Le prénom est obligatoire'),
@@ -27,6 +28,7 @@ type FormInputs = {
 
 
 };
+
 export default function CreateProfil() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>({
     resolver: yupResolver(schema),
@@ -40,6 +42,7 @@ export default function CreateProfil() {
   };
   return (
     <main>
+
       <TopStep prog="0%" />
       <div className="container">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -80,7 +83,7 @@ export default function CreateProfil() {
           <div className="check-box">
             <div className="checkbox">
               <input type="checkbox" id="isActive" className="custom-checkbox" />
-              <label htmlFor="">Vous avez déjà un compte ? <span>Connectez vous </span></label>
+              <label htmlFor="">Accepter les condition de confidentialité <Link to="/login"> <span>Connectez vous </span></Link></label>
             </div>
 
           </div>

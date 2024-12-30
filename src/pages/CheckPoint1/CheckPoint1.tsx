@@ -1,14 +1,16 @@
 
 import useMultiStepFormStore from "@/store/Zustand/Store";
 import { IoArrowForward } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function CheckPoint1() {
   const { resetStore } = useMultiStepFormStore();
+  const {id}=useParams()
+
   const navigat = useNavigate()
   const handelClick = () => {
     resetStore();
-    navigat("/MultiStepForm")
+    navigat(`/MultiStepForm${id}`)
 
   }
   return (
