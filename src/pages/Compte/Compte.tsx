@@ -139,10 +139,7 @@ export default function Compte() {
         </div>
       </form>
 
-      <div
-        className="first-card delete-section"
-        style={{ gap: "1rem", marginBottom: "90px" }}
-      >
+      <div className="first-card delete-section" style={{ gap: "1rem" }}>
         <h1>Delete account</h1>
         <div className="first-card-alert">
           <h1>Êtes-vous sûr de vouloir supprimer votre compte ?</h1>

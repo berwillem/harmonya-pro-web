@@ -1,7 +1,6 @@
 import { LinearProgress } from "@mui/material";
 import "./Abonnements.css";
 import Table from "@/components/Table/Table";
-import MiniNav from "@/components/MiniNav/MiniNav";
 export default function Abonnements() {
   const tableHeaders = [
     "#",
@@ -99,7 +98,7 @@ export default function Abonnements() {
             </div>
           </div>
         </div>
-        <div className="second-card">
+        <div className="second-card black-td">
           <Table
             title="Historique de facturation"
             onOptionChange={(selectedOption) => console.log(selectedOption)}

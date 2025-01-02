@@ -21,6 +21,7 @@ import Register from "@/pages/Register/Register";
 import NotFound from "@/pages/NotFound/NotFound";
 import ForgetPassword from "@/pages/ForgetPassword/ForgetPassword";
 import Agenda from "@/pages/Agenda/Agenda";
+import Notifications from "@/pages/Notifications/Notifications";
 
 const Router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const Router = createBrowserRouter([
           {
             path: "securite",
             element: <Securite />,
+          },
+          {
+            path: "Notifications",
+            element: <Notifications />,
           },
         ],
       },
