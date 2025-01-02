@@ -79,7 +79,7 @@ table td:last-child {
 table .head td:last-child {
   position: sticky;
   right: 0;
-  background-color: #f3f3f4;
+  /* background-color: #f3f3f4; */
   z-index: 1;
 }
 .head {
@@ -211,24 +211,4 @@ thead tr td.green:first-child ~ tbody tr td:first-child,
 .green {
   color: #189166 !important;
   min-width: 60px !important;
-}
-
-.pending {
-  color: #ffbe31 !important;
-  background-color: #ffbb001a !important;
-  border-radius: 8px;
-  padding: 5px;
-}
-.paye {
-  color: #189166 !important;
-  background-color: #02c17d1a !important;
-  border-radius: 8px;
-  padding: 5px;
-}
-
-.annule {
-  color: #ff0000 !important;
-  background-color: #ff00001a !important;
-  border-radius: 8px;
-  padding: 5px;
 }

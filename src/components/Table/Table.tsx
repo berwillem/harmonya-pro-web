@@ -125,19 +125,29 @@ export default function Table({
                         <span
                           style={{
                             backgroundColor:
-                              statusColors[elm.text] || "transparent",
-                            color: Colors[elm.text] || "inherit",
+                              elm.text === "Payé"
+                                ? statusColors["completed"]
+                                : elm.text === "A venir"
+                                ? statusColors["pending"]
+                                : elm.text === "Annulé"
+                                ? statusColors["canceled"]
+                                : "transparent",
+                            color:
+                              elm.text === "Payé"
+                                ? Colors["completed"]
+                                : elm.text === "A venir"
+                                ? Colors["pending"]
+                                : elm.text === "Annulé"
+                                ? Colors["canceled"]
+                                : "inherit",
                             borderRadius: "4px",
+                            padding:
+                              elm.text === "Payé" ||
+                              elm.text === "A venir" ||
+                              elm.text === "Annulé"
+                                ? PADDING["completed"]
+                                : "unset",
                           }}
-                          className={
-                            elm?.text === "Payé"
-                              ? "paye"
-                              : elm?.text == "A venir"
-                              ? "pending"
-                              : elm?.text == "Annulé"
-                              ? "annule"
-                              : ""
-                          }
                         >
                           {elm.text}
                         </span>
