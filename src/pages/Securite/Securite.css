@@ -7,7 +7,8 @@
   font-family: Arial, sans-serif;
 }
 
-.change-password-form h1 {
+.change-password-form h1,
+.rootform h1 {
   font-family: Sora;
   font-size: 24px;
   font-weight: 600;
@@ -130,6 +131,7 @@ button:disabled {
 @media screen and (max-width: 768px) {
   .form-field {
     flex-direction: column;
+    /* gap: 16px; */
   }
   .form-field1 {
     width: 100%;
@@ -139,5 +141,9 @@ button:disabled {
   }
   .form-actions button:last-child {
     width: 100%;
+  }
+  .change-password-form {
+    margin: 15px;
+    width: unset;
   }
 }
