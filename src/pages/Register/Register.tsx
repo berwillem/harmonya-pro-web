@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import { RegisterPro } from "@/services/AuthServices";
 
 type FormInputs = {
   email: string;
@@ -36,8 +37,15 @@ export default function Register() {
 
   // Gestion de soumission du formulaire
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    console.log("Données du formulaire :", data);
-    // Envoyer les données à l'API ou gérer la logique d'inscription ici
+    const data2 = {
+      email: data.email,
+      password: data.password
+    }
+    RegisterPro(data2).then(() => {
+
+    }).catch((err) => {
+      console.log(err);
+    })
   };
 
   return (
