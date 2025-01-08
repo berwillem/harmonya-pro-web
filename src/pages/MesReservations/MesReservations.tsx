@@ -11,17 +11,23 @@ export default function MesReservations() {
     "Service",
     "Date",
     "Heure",
+    "Paiement",
+    "Status du client",
+    "Status de la réservation",
     "Action",
   ];
 
   const tableData = [
     [
-      { text: "Walim berchiche" },
+      { text: "Walim Berchiche" },
       { text: "+213 554 96 93 57" },
       { text: "laloutme@gmail.com" },
       { text: "Coiffure homme" },
       { text: "23 Déc 2024" },
       { text: "10h00 am" },
+      { text: "Visa" }, 
+      { text: "Client normal" }, 
+      { text: "Validé" }, 
       {
         icons: [
           {
@@ -39,6 +45,9 @@ export default function MesReservations() {
       { text: "Coiffure femme" },
       { text: "24 Déc 2024" },
       { text: "02h00 pm" },
+      { text: "Cash" }, 
+      { text: "VIP" }, 
+      { text: "En attente" }, 
       {
         icons: [
           {
@@ -56,6 +65,9 @@ export default function MesReservations() {
       { text: "Coiffure homme" },
       { text: "23 Déc 2024" },
       { text: "10h00 am" },
+      { text: "El Dahabiya" }, 
+      { text: "Client normal" }, 
+      { text: "Annulé" }, 
       {
         icons: [
           {
@@ -73,6 +85,9 @@ export default function MesReservations() {
       { text: "Coiffure homme" },
       { text: "23 Déc 2024" },
       { text: "10h00 am" },
+      { text: "CIB" }, 
+      { text: "Blacklisted" }, 
+      { text: "Validé" }, 
       {
         icons: [
           {
@@ -84,12 +99,15 @@ export default function MesReservations() {
       },
     ],
     [
-      { text: "Lalout Mehdi" },
-      { text: "+213 554 96 93 57" },
-      { text: "laloutme@gmail.com" },
+      { text: "Mehdi Bensalem" },
+      { text: "+213 664 77 22 33" },
+      { text: "mehdi.bensalem@gmail.com" },
       { text: "Coiffure homme" },
-      { text: "23 Déc 2024" },
-      { text: "10h00 am" },
+      { text: "25 Déc 2024" },
+      { text: "01h30 pm" },
+      { text: "Visa" }, 
+      { text: "VIP" }, 
+      { text: "En attente" }, 
       {
         icons: [
           {

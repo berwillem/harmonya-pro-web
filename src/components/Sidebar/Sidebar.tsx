@@ -6,6 +6,7 @@ import { RiBardLine } from "react-icons/ri";
 import { LuLogOut } from "react-icons/lu";
 import { sidebarLinks } from "../../data/SidebarLinks.js";
 import { GoGear } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 
 interface SidebarProps {
   isVisible: boolean;
@@ -13,6 +14,7 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
+  const { t } = useTranslation();
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -24,22 +26,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
     <div
       className={`${styles.overlay} ${isVisible ? styles.show : ""}`}
       onClick={handleOverlayClick}
-      // style={{
-      //   opacity: isVisible ? 1 : 0,
-      //   zIndex: isVisible ? 4 : -1,
-      // }}
     >
       <div
         className={`${styles.sidebar} ${
           isVisible ? styles.sidebarVisible : ""
         }`}
-        // style={{
-        //   transform: isVisible ? "translateX(0)" : "translateX(-100%)",
-        //   transition: "0.5s",
-        //   boxShadow: isVisible
-        //     ? "rgba(0, 0, 0, 0.5) 20px 0px 100px 0px"
-        //     : "none",
-        // }}
       >
         <button className={styles.closeButton} onClick={onClose}>
           ✖
@@ -66,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isVisible, onClose }) => {
                     }
                     style={link.customStyle || {}}
                   >
-                    {link.icon} {link.label}
+                    {link.icon} {t(link.label)}
                   </NavLink>
                 </li>
               )

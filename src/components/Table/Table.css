@@ -184,12 +184,12 @@ table td a {
     transform: translateX(15px);
   }
 
-  .table-div {
-    overflow-x: scroll;
-  }
   .table-div td:last-child {
     padding-right: 30px;
   }
+}
+.table-div {
+  overflow-x: scroll;
 }
 @media screen and (max-width: 1250px) {
   .table-container {
@@ -211,4 +211,33 @@ thead tr td.green:first-child ~ tbody tr td:first-child,
 .green {
   color: #189166 !important;
   min-width: 60px !important;
+}
+
+:root {
+  --pending-status: #f7f7f7;
+  --pending-color: #ff8c00;
+
+  --canceled-status: #fef2f2;
+  --canceled-color: #ff4d4f;
+
+  --completed-status: #f0f9eb;
+  --completed-color: #52c41a;
+
+  --vip-status: #fff7e6;
+  --vip-color: #fa8c16;
+
+  --blacklisted-status: #fafafa;
+  --blacklisted-color: #8c8c8c;
+
+  --normal-status: #e6f7ff;
+  --normal-color: #1890ff;
+
+  --el-dahabiya-status: #f9f0ff;
+  --el-dahabiya-color: #722ed1;
+
+  --cib-status: #fffbe6;
+  --cib-color: #faad14;
+
+  --visa-status: #e6fffb;
+  --visa-color: #13c2c2;
 }

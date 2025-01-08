@@ -64,23 +64,25 @@ export default function Table({
   const statusColors: Record<string, string> = {
     accepted: "rgba(255, 129, 33, 0.07)",
     canceled: "rgba(255, 33, 74, 0.1)",
-    pending: "rgba(59, 33, 255, 0.1)",
-    completed: "rgba(37, 255, 33, 0.1)",
+    Bleu: "rgba(59, 33, 255, 0.1)",
+    Vert: "rgba(37, 255, 33, 0.1)",
+    Jaune: "rgba(255, 136, 0, 0.1)",
+    blacklist: "rgba(0, 0, 0, 0.1)",
   };
 
   const Colors: Record<string, string> = {
     accepted: "rgba(255, 129, 33, 1)",
     canceled: "rgba(255, 33, 74, 1)",
-    pending: "rgba(59, 33, 255, 1)",
-    completed: "rgba(37, 255, 33, 1)",
+    Bleu: "rgba(59, 33, 255, 1)",
+    Vert: "rgba(37, 255, 33, 1)",
+    Jaune: "rgba(255, 165, 0, 1)",
+    blacklist: "rgba(0, 0, 0, 1)",
   };
 
   const PADDING: Record<string, string> = {
-    accepted: "7px 15px",
-    canceled: "7px 15px",
-    pending: "7px 15px",
-    completed: "7px 15px",
+    Padding: "7px 15px",
   };
+
   const isFirstHeaderGreen = tr[0] === "#";
 
   return (
@@ -125,27 +127,57 @@ export default function Table({
                         <span
                           style={{
                             backgroundColor:
-                              elm.text === "Payé"
-                                ? statusColors["completed"]
-                                : elm.text === "A venir"
-                                ? statusColors["pending"]
+                              elm.text === "En attente" ||
+                              elm.text === "VIP" ||
+                              elm.text === "El Dahabiya"
+                                ? statusColors["Jaune"]
+                                : elm.text === "CIB" ||
+                                  elm.text === "Client normal" ||
+                                  elm.text === "Cash" ||
+                                  elm.text === "Payé" ||
+                                  elm.text === "Validé"
+                                ? statusColors["Vert"]
+                                : elm.text === "A venir" || elm.text === "Visa"
+                                ? statusColors["Bleu"]
                                 : elm.text === "Annulé"
                                 ? statusColors["canceled"]
+                                : elm.text === "Blacklisted"
+                                ? statusColors["blacklist"]
                                 : "transparent",
+
                             color:
-                              elm.text === "Payé"
-                                ? Colors["completed"]
-                                : elm.text === "A venir"
-                                ? Colors["pending"]
+                              elm.text === "El Dahabiya" ||
+                              elm.text === "VIP" ||
+                              elm.text === "En attente"
+                                ? Colors["Jaune"]
+                                : elm.text === "Client normal" ||
+                                  elm.text === "CIB" ||
+                                  elm.text === "Cash" ||
+                                  elm.text === "Payé" ||
+                                  elm.text === "Validé"
+                                ? Colors["Vert"]
+                                : elm.text === "A venir" || elm.text === "Visa"
+                                ? Colors["Bleu"]
                                 : elm.text === "Annulé"
                                 ? Colors["canceled"]
+                                : elm.text === "Blacklisted"
+                                ? Colors["blacklist"]
                                 : "inherit",
                             borderRadius: "4px",
                             padding:
                               elm.text === "Payé" ||
                               elm.text === "A venir" ||
-                              elm.text === "Annulé"
-                                ? PADDING["completed"]
+                              elm.text === "Annulé" ||
+                              elm.text === "Visa" ||
+                              elm.text === "CIB" ||
+                              elm.text === "Cash" ||
+                              elm.text === "Client normal" ||
+                              elm.text === "Blacklisted" ||
+                              elm.text === "VIP" ||
+                              elm.text === "En attente" ||
+                              elm.text === "Validé" ||
+                              elm.text === "El Dahabiya"
+                                ? PADDING["Padding"]
                                 : "unset",
                           }}
                         >
