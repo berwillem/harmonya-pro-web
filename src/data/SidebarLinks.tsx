@@ -9,22 +9,14 @@ import { PiMedal } from "react-icons/pi";
 import { SidebarLink } from "../types/SidebarLink";
 
 export const sidebarLinks: SidebarLink[] = [
-  { label: "Home", path: "/", icon: <FaHome size={20} /> },
-  {
-    label: "Dashboard",
-    path: "/Dashboard",
-    icon: <MdDashboard size={20} />,
-  },
-  {
-    label: "Statistic",
-    path: "/Statistics",
-    icon: <IoMdStats size={20} />,
-  },
+  { label: "home", path: "/", icon: <FaHome size={20} /> },
+  { label: "dashboard", path: "/Dashboard", icon: <MdDashboard size={20} /> },
+  { label: "statistics", path: "/Statistics", icon: <IoMdStats size={20} /> },
 
-  { section: "Reservations" },
-  { label: "Agenda", path: "/agenda", icon: <FaCalendarAlt size={20} /> },
+  { section: "reservations" },
+  { label: "agenda", path: "/agenda", icon: <FaCalendarAlt size={20} /> },
   {
-    label: "Mes reservations",
+    label: "my_reservations",
     path: "/MesReservations",
     icon: <LiaPencilRulerSolid size={26} />,
     customStyle: {
@@ -34,26 +26,26 @@ export const sidebarLinks: SidebarLink[] = [
     },
   },
   {
-    label: "Demande de reservations",
+    label: "reservation_requests",
     path: "/Demande-reservations",
     icon: <VscGitPullRequestCreate size={20} />,
     customStyle: { fontSize: "smaller" },
   },
 
-  { section: "Services" },
+  { section: "services" },
   {
-    label: "Ajouter un service",
+    label: "add_service",
     path: "/Addservice",
     icon: <PiMedal size={24} />,
     customStyle: { paddingLeft: "0", gap: "13px" },
   },
   {
-    label: "Boutique",
+    label: "shop",
     path: "/Boutique",
     icon: <HiOutlineBookOpen size={20} />,
   },
   {
-    label: "Abonnements",
+    label: "subscriptions",
     path: "/Abonnements",
     icon: <BsSuitcaseLg size={20} />,
   },

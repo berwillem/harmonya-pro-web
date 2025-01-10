@@ -1,4 +1,13 @@
 {
-  "createProfil": "Crear cuenta"
-
+  "home": "Inicio",
+  "dashboard": "Panel de control",
+  "statistics": "Estadísticas",
+  "reservations": "Reservas",
+  "agenda": "Agenda",
+  "my_reservations": "Mis reservas",
+  "reservation_requests": "Solicitudes de reserva",
+  "services": "Servicios",
+  "add_service": "Agregar servicio",
+  "shop": "Tienda",
+  "subscriptions": "Suscripciones"
 }

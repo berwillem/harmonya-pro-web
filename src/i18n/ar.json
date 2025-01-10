@@ -1,3 +1,13 @@
 {
-  "createProfil": "انشاء حساب"
+  "home": "الرئيسية",
+  "dashboard": "لوحة القيادة",
+  "statistics": "الإحصائيات",
+  "reservations": "الحجوزات",
+  "agenda": "جدول الأعمال",
+  "my_reservations": "حجوزاتي",
+  "reservation_requests": "طلبات الحجز",
+  "services": "الخدمات",
+  "add_service": "إضافة خدمة",
+  "shop": "المتجر",
+  "subscriptions": "الاشتراكات"
 }

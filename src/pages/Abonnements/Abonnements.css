@@ -28,13 +28,11 @@
 }
 .first-card-titles h1 {
   font-size: 24px;
-  color: #333;
   margin-bottom: 10px;
 }
 
 .first-card-titles h2 {
   font-size: 18px;
-  color: #444;
   margin-bottom: 8px;
 }
 
@@ -45,7 +43,6 @@
 
 .first-card-titles h3 {
   font-size: 14px;
-  color: #666;
   margin-bottom: 6px;
 }
 

@@ -1,3 +1,13 @@
 {
-  "createProfil": "Créer un compte"
+  "home": "Accueil",
+  "dashboard": "Tableau de bord",
+  "statistics": "Statistiques",
+  "reservations": "Réservations",
+  "agenda": "Agenda",
+  "my_reservations": "Mes réservations",
+  "reservation_requests": "Demande de réservations",
+  "services": "Services",
+  "add_service": "Ajouter un service",
+  "shop": "Boutique",
+  "subscriptions": "Abonnements"
 }

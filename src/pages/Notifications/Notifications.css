@@ -1,0 +1,112 @@
+.notifications-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.notifications-permission {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.notifications-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.notifications-table th,
+.notifications-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.notifications-table th {
+  font-weight: bold;
+}
+
+.notifications-table tr:last-child td {
+  border-bottom: none;
+}
+
+.notifications-footer {
+  margin-bottom: 20px;
+}
+
+.notifications-footer label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.notifications-input {
+  /* width: 100%; */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.notifications-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background-color: var(--dark-button-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+.notifications-table td:first-child {
+  width: 70%;
+}
+.notifications-table td:last-child {
+  text-align: left;
+}
+.notifications-table input {
+  width: unset;
+}
+.cancel-button {
+  background-color: #f4f4f4;
+  color: #555;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #ddd;
+}
+
+.custom-select-container {
+  width: 400px; /* Adjust based on container width */
+}
+
+.custom-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #555;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-select:focus {
+  border-color: #aaa; /* Focus border color */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Subtle focus shadow */
+}
