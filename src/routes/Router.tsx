@@ -23,6 +23,7 @@ import Agenda from "@/pages/Agenda/Agenda";
 import Notifications from "@/pages/Notifications/Notifications";
 
 import Statistique from "@/pages/Statistique/Statistique";
+import BoostStep from "@/pages/BoostStep/BoostStep";
 
 const Router = createBrowserRouter([
   {
@@ -86,6 +87,7 @@ const Router = createBrowserRouter([
   { path: "/subscriptionChoise", element: <SubscriptionChoise /> },
   { path: "/multiStepForm1", element: <MultiStepForm /> },
   { path: "/MultiStepForm2", element: <MultiStepForm2 /> },
+  { path: "/activeBoost", element: <BoostStep /> },
   { path: "/CheckPoint/:id", element: <CheckPoint1 /> },
   { path: "/ValidationPage", element: <ValidationPage /> },
 ]);
